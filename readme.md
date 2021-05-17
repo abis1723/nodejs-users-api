@@ -1,3 +1,8 @@
+### Development Tools and architecture
+I used visual studio code for the development environment and  nodejs V14.0.0
+I deployed the code in AWS. I have created two separate lambda functions and the lambdas are triggered by API which is configured in AWS API Gateway. I used Serverless framework  to automate the deployment.
+
+
 # lambda functions
 # transportnsw-api-service
 This Lambda gets triggered by transport nsw entity api for storeing the user details
@@ -20,16 +25,11 @@ This Lambda gets triggered by transport nsw entity api fetch a user by id
 
   GET - https://3kiya3gk8g.execute-api.ap-southeast-2.amazonaws.com/dev/v1/user/{entityId}
 
-
 #### Debugging
 We can use the launch configuration given in launch.json for debugging in [VS Code](http://code.visualstudio.com/docs/editor/debugging).
 
 ### Node Version
 Node.js version 14.0.0 is used for this project.
-
-### Development Tools and architecture
-I used visual studio code for the development environment and  nodejs V14.0.0
-I deployed the code in AWS. I have created two separate lambda functions and the lambdas are triggered by API which is configured in AWS API Gateway. I used Serverless framework  to automate the deployment.
 
 ### Style Guide
 Followed the google styleguides for [javascript](https://google.github.io/styleguide/jsguide.html) and [html](https://google.github.io/styleguide/htmlcssguide.html)
