@@ -23,7 +23,7 @@ This Lambda gets triggered by transport nsw entity api fetch a user by id
 	}
 }
 
-  GET - https://3kiya3gk8g.execute-api.ap-southeast-2.amazonaws.com/dev/v1/user/{entityId}
+  GET - https://3kiya3gk8g.execute-api.ap-southeast-2.amazonaws.com/dev/v1/user/{entityid}
 
 #### Debugging
 We can use the launch configuration given in launch.json for debugging in [VS Code](http://code.visualstudio.com/docs/editor/debugging).
