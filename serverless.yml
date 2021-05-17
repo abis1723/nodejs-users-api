@@ -1,0 +1,44 @@
+service: transportnsw-api-service
+
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: ${opt:stage, "dev"}
+  region: ${opt:region, "ap-southeast-2"}
+  version: v1
+
+package:
+    exclude:
+      - '..*/**'
+    include: 
+      - 'index.js'
+
+functions:
+  user:
+    handler: index.upsertuser
+    name: transportnsw-api-service
+    description: This Lambda gets triggered by transport nsw entity api for storeing the user details
+    environment:
+      LOGGER_FLAG: transportnsw-api
+    events:
+      - http:
+          method: post
+          path: "v1/user"
+          cors: true
+          
+  fetchuser:
+    handler: index.fetchuser
+    name: transportnsw-api-service-fetch
+    description: This Lambda gets triggered by transport nsw entity api fetch a user by id
+    environment:
+      LOGGER_FLAG: transportnsw-api
+    events:
+      - http:
+          method: get
+          path: "v1/user/{entityid}"
+          cors: true
+          parameters:
+            querystrings:
+              size: true
+
